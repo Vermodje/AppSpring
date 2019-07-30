@@ -19,23 +19,6 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @RequestMapping("/")
-    public String homePage(Model model, Principal principal) {
-        Iterator<Role> roleIterator = service.getUserByLogin(principal.getName()).getRoles().iterator();
-        StringBuilder userRole = new StringBuilder();
-        String page;
-        if (roleIterator.hasNext()) {
-            userRole.append(roleIterator.next().getAuthority());
-        }
-        if (userRole.toString().contains("ROLE_ADMIN")) {
-            page = "redirect:/admin";
-        } else {
-            page = "redirect:/home";
-        }
-        return page;
-
-    }
-
     @RequestMapping("/admin")
     public ModelAndView admin(Model model, @RequestParam(value = "message", required = false) String message,
                               @RequestParam(value = "error", required = false) String error) {

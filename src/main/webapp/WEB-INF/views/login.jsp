@@ -27,6 +27,7 @@
         <tr>
             <td><input name="submit" type="submit" value="submit" /></td>
         </tr>
+        <tr><td><input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/></td></tr>
     </table>
 </form>
 <span style="color: red;"><c:out value="${error}"></c:out></span>
