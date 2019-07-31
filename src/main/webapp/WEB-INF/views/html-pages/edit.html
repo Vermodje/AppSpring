@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit User</h1>
-<form th:action="@{/admin/update}" method="post" th:object="${user}">
+<form th:action="@{/admin/update(id=${user.id})}" method="post" th:object="${user}">
     <table border="0" cellpadding="5">
         <tr>
             <td>ID:</td>
@@ -35,7 +35,6 @@
                 <option value="ROLE_ADMIN">ROLE_ADMIN</option>
             </select></label></td>
         </tr>
-        <input type="text" name="id" th:value="${user.id}" hidden>
         <tr>
             <td colspan="2"><input type="submit" value="Edit"></td>
         </tr>
