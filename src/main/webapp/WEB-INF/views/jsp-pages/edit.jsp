@@ -16,7 +16,7 @@
 </head>
 <body>
 <h1>Edit User</h1>
-<form:form action="update" method="post" modelAttribute="user">
+<form action="/admin/update" method="post" modelAttribute="user">
     <table border="0" cellpadding="5">
         <tr>
             <td>ID:</td>
@@ -53,7 +53,7 @@
             <td colspan="2"><input type="submit" value="Edit"></td>
         </tr>
     </table>
-</form:form>
+</form>
 <span style="color: red;"><c:out value="${message}"></c:out></span>
 <a href="<c:url value="/logout" />">Logout</a>
 </body>
